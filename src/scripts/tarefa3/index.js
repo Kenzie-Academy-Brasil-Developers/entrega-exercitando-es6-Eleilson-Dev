@@ -43,8 +43,28 @@ const sellBook = (bookList, bookId, userType = 0) => {
 
 // console.log(sellBook(bookStoreBooks, 1, userTypeDiscount.platinum));
 
-const calculateAverageRating = () => {
-  return 'x';
+const calculateAverageRating = (bookList, bookId) => {
+  const bookFound = bookList.find((book) => {
+    return book.id === bookId;
+  });
+
+  const { title, ratings } = bookFound;
+
+  if (!bookFound) {
+    console.log('Livro não encontrado.');
+    return;
+  } else if (ratings.length === 0) {
+    console.log(`O Livro ${title} não possui nenhuma avaliação.`);
+    return;
+  }
+
+  const total = ratings.reduce((acm, current) => {
+    return acm + current;
+  }, 0);
+
+  const media = (total / ratings.length).toFixed(2);
+
+  return `O livro ${title} possui uma média de avaliação igual a ${media}.`;
 };
 
-console.log(calculateAverageRating());
+console.log(calculateAverageRating(bookStoreBooks, 17));
