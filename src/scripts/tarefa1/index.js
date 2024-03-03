@@ -1,3 +1,4 @@
+console.log('========================index Tarefa 1 ========================');
 import { productsList } from './database.js';
 
 const calculateTotalCost = (customerName, products, discount = 0) => {
@@ -17,7 +18,7 @@ const calculateTotalCost = (customerName, products, discount = 0) => {
   const discounted = (total * discount) / 100;
   const totalDisconted = (total - discounted).toFixed(2);
 
-  return `Olá, ${customerName} O total da sua compra é R$ ${totalDisconted} ${msg}.`;
+  return `Olá, ${customerName} o total da sua compra é R$ ${totalDisconted} ${msg}.`;
 };
 
 console.log(calculateTotalCost('João', productsList, 15));

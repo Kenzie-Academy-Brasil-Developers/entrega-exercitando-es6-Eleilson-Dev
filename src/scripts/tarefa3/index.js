@@ -1,3 +1,4 @@
+console.log('========================index Tarefa 3 ========================');
 import { bookStoreBooks, userTypeDiscount } from './database.js';
 // normal: 0%
 // bronze: 5%
@@ -13,7 +14,7 @@ const findBooksByCategory = (bookList, category) => {
   });
 };
 
-// console.log(findBooksByCategory(bookStoreBooks, 'Aventura'));
+console.log(findBooksByCategory(bookStoreBooks, 'Aventura'));
 
 const findBookById = (bookList, bookId) => {
   return bookList.find((book) => {
@@ -21,7 +22,7 @@ const findBookById = (bookList, bookId) => {
   });
 };
 
-// console.log(findBookById(bookStoreBooks, 10));
+console.log(findBookById(bookStoreBooks, 10));
 
 const sellBook = (bookList, bookId, userType = 0) => {
   const bookFound = bookList.find((book) => {
@@ -41,7 +42,7 @@ const sellBook = (bookList, bookId, userType = 0) => {
   return `Livro ${bookFound.title} vendido com sucesso por R$ ${bookPrice} (${discount}% de desconto).`;
 };
 
-// console.log(sellBook(bookStoreBooks, 1, userTypeDiscount.platinum));
+console.log(sellBook(bookStoreBooks, 1, userTypeDiscount.platinum));
 
 const calculateAverageRating = (bookList, bookId) => {
   const bookFound = bookList.find((book) => {
